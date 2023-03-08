@@ -16,6 +16,7 @@ from functools import wraps
 from mysql_util import MysqlUtil
 from Code.wei import time_formater,get_single_page,getLongText,parse_page,kaishi
 from Code.upload import main
+from Code.commentspy import pinglun
 def date_delta(date,gap,formate = "%Y%m%d"):
         date = str2date(date)
         pre_date = date + datetime.timedelta(days=-gap)
@@ -162,6 +163,12 @@ def addevent():
         db.insert(sql)
 
     return temp_data
+
+@app.route('/pinglun',methods=["GET", "POST"])
+def ping():
+    return pinglun()
+
+
 
 if __name__ == "__main__":
     app.run(debug = True,host='0.0.0.0',port=802)
