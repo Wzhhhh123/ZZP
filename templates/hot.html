@@ -100,7 +100,7 @@
                                             <th>标题</th>
                                             <th>发布用户</th>
                                             <th>发布地点</th>
-                                            <th>用户性别</th>
+                                            <th>点击发布评论</th>
                                             <th>发布时间</th>
                                             <th>发布内容</th>
                                             <th>点赞数</th>
@@ -116,7 +116,7 @@
                                             <th>标题</th>
                                             <th>发布用户</th>
                                             <th>发布地点</th>
-                                            <th>用户性别</th>
+                                            <th>点击发布评论</th>
                                             <th>发布时间</th>
                                             <th>发布内容</th>
                                             <th>点赞数</th>
@@ -130,11 +130,10 @@
                                         <tr>
 
                                             <td>{{article.id}}</td>
-
                                             <td>{{article.title}}</td>
                                             <td>{{article.user_name}}</td>
                                             <td>{{article.status_country}}{{article.status_province}}{{article.status_city}}</td>
-                                            <td>{{article.gender}}</td>
+                                            <td><a href="/comm?url=https://weibo.com/1/{{article.wid}}&title={{article.title}}">发布评论</a></td>
                                             <td>{{article.publish_time}}</td>
                                             <td>{{article.text}}</td>
                                             <td>{{article.like_count}}</td>

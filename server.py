@@ -166,9 +166,19 @@ def addevent():
 
 @app.route('/pinglun',methods=["GET", "POST"])
 def ping():
-    return pinglun()
-
-
+    url =  request.args.get('url')
+    pinglun(url)
+    return jsonify("评论成功")
+@app.route('/comm')
+def pingl():
+    url =  request.args.get('url')
+    title =  request.args.get('title')
+    return render_template('charts.html',url=url,title=title)
+@app.route('/pingluntu',methods=["GET", "POST"])
+def pingluntu():
+    import base64
+    encoded = base64.b64encode(open('5.png', 'rb').read()).decode('ascii')
+    return encoded
 
 if __name__ == "__main__":
     app.run(debug = True,host='0.0.0.0',port=802)
